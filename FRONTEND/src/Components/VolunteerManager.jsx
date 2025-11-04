@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
-import config from './config.js';
 
 const VolunteerManager = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -20,7 +19,7 @@ const VolunteerManager = () => {
   const [editMode, setEditMode] = useState(false);
   const [activeSection, setActiveSection] = useState('dashboard');
 
-  const baseUrl = `${config.url}/volunteerapi`;
+  const baseUrl = `${import.meta.env.VITE_API_URL}/volunteerapi`;
 
   useEffect(() => {
     if (activeSection === 'all') {
